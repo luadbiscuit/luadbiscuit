@@ -46,7 +46,8 @@
 
         .services-grid {
             display: grid;
-            /* Esta configuração faz com que os quadros se organizem em colunas duplas automaticamente no computador */
+            /* A mágica acontece aqui: cria colunas automáticas de no mínimo 280px. 
+               No computador, isso forma a grade de 3x2. No celular, empilha 1 por 1. */
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
             margin-bottom: 60px;
@@ -162,6 +163,20 @@
                 <h3>Novo Quadro 2</h3>
                 <p>Espaço reservado para a descrição deste novo serviço. Em breve vamos personalizar este texto com os detalhes.</p>
                 <a href="#" class="btn">Botão 2</a>
+            </div>
+
+            <!-- Quadro 5 NOVO -->
+            <div class="service-card">
+                <h3>Novo Quadro 3</h3>
+                <p>Espaço reservado para a descrição deste novo serviço. Em breve vamos personalizar este texto com os detalhes.</p>
+                <a href="#" class="btn">Botão 3</a>
+            </div>
+
+            <!-- Quadro 6 NOVO -->
+            <div class="service-card">
+                <h3>Novo Quadro 4</h3>
+                <p>Espaço reservado para a descrição deste novo serviço. Em breve vamos personalizar este texto com os detalhes.</p>
+                <a href="#" class="btn">Botão 4</a>
             </div>
         </div>
 
