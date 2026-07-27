@@ -7,13 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Fundo azul escuro puxado das bordas da sua arte */
-            --bg-color: #0e1022; 
-            --card-bg: rgba(30, 30, 50, 0.5);
             --gold: #d4af37;
             --gold-light: #f3e5ab;
             --text-main: #f0f0f5;
-            --text-muted: #b0b0c0;
+            --text-muted: #dcdce6; /* Clareei um pouco para dar mais leitura */
         }
 
         * {
@@ -22,41 +19,31 @@
             padding: 0;
         }
 
+        /* AQUI ESTÁ A MÁGICA: A imagem é o corpo inteiro do site */
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-color);
+            background-image: url('capa_lua.png'); /* ALTERE AQUI SE O NOME DA SUA IMAGEM FOR DIFERENTE */
+            background-size: cover; /* Faz a imagem cobrir a tela toda */
+            background-position: center center; /* Mantém a lua bem no meio da tela */
+            background-attachment: fixed; /* A imagem fica parada enquanto os textos rolam por cima */
+            background-color: #0c0a1d; 
             color: var(--text-main);
             line-height: 1.6;
             padding-bottom: 50px;
         }
 
-        /* O novo topo que exibe a sua arte em destaque */
-        .hero-header {
-            text-align: center;
-            background-color: var(--bg-color);
-            padding-bottom: 30px;
-        }
-
-        .hero-image {
+        /* Espaço em branco gigante para não esconder a sua arte logo de cara */
+        .espaco-arte {
+            height: 55vh; /* Ocupa mais da metade da tela só mostrando o seu desenho */
             width: 100%;
-            max-width: 1200px; /* Limita o tamanho em telas muito gigantes */
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .hero-subtitle {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 20px auto 0 auto;
-            padding: 0 20px;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px 20px 40px 20px;
+            position: relative;
+            z-index: 2;
         }
 
         .section-title {
@@ -65,7 +52,7 @@
             text-align: center;
             font-size: 1.8rem;
             margin-bottom: 35px;
-            position: relative;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.8); /* Sombrinha para o texto não sumir no fundo */
         }
 
         .section-title::after {
@@ -84,13 +71,16 @@
             margin-bottom: 60px;
         }
 
+        /* Caixinhas com efeito de "Vidro Escuro" para destacar os textos em cima da imagem */
         .service-card {
-            background-color: var(--card-bg);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            background-color: rgba(12, 10, 29, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 12px;
             padding: 30px;
             text-align: center;
+            backdrop-filter: blur(8px);
             transition: transform 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
 
         .service-card:hover {
@@ -106,7 +96,7 @@
         }
 
         .service-card p {
-            color: var(--text-muted);
+            color: var(--text-main);
             font-size: 0.95rem;
             margin-bottom: 20px;
         }
@@ -127,12 +117,14 @@
         }
 
         .app-banner {
-            background: linear-gradient(135deg, rgba(27, 22, 58, 0.6), rgba(22, 19, 45, 0.8));
+            background: linear-gradient(135deg, rgba(27, 22, 58, 0.85), rgba(22, 19, 45, 0.95));
             border: 1px solid var(--gold);
             border-radius: 16px;
             padding: 40px;
             text-align: center;
             margin-bottom: 60px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
 
         .app-banner h2 {
@@ -143,7 +135,7 @@
         }
 
         .app-banner p {
-            color: var(--text-muted);
+            color: var(--text-main);
             max-width: 600px;
             margin: 0 auto 25px auto;
         }
@@ -152,20 +144,18 @@
             text-align: center;
             color: var(--text-muted);
             font-size: 0.85rem;
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
             padding-top: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
         }
     </style>
 </head>
 <body>
 
-    <!-- Novo Topo com a sua Arte Principal -->
-    <header class="hero-header">
-        <img src="capa_lua.png" alt="Lua d'Biscuit - Astrologia e Tarot" class="hero-image">
-        <p class="hero-subtitle">Orientação cósmica, autoconhecimento e sabedoria ancestral através do Tarot e da Astrologia.</p>
-    </header>
+    <!-- Esse é o espaço vazio para a cliente admirar a sua arte quando o site abrir -->
+    <div class="espaco-arte"></div>
 
     <div class="container">
+        
         <h2 class="section-title">Serviços e Leituras</h2>
         
         <div class="services-grid">
@@ -187,6 +177,7 @@
             <p>Estamos finalizando um aplicativo exclusivo e offline para te acompanhar no dia a dia com tiragens diárias, diário místico e ferramentas astrológicas direto no seu celular.</p>
             <span class="btn" style="background: transparent; border: 1px solid var(--gold); color: var(--gold); cursor: default;">Aguarde o Lançamento</span>
         </div>
+
     </div>
 
     <footer>
