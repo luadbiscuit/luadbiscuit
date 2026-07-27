@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lua d'Biscuit | Tarot & Astrologia</title>
-    <!-- Importando a fonte elegante do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #0c0a1d;
-            --card-bg: #16132d;
+            --card-bg: rgba(22, 19, 45, 0.85);
             --gold: #d4af37;
             --gold-light: #f3e5ab;
             --text-main: #f0f0f5;
@@ -29,23 +28,34 @@
             line-height: 1.6;
             padding-bottom: 50px;
             overflow-x: hidden;
-            position: relative;
+            /* Fundo com pequenas estrelas e luas em padrão suave */
+            background-image: radial-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
 
-        /* Efeito de Estrelas e Luas Mágicas no Fundo */
-        body::before {
-            content: '✨ 🌙 ⭐️ ✨ 🌙 ⭐️ ✨ 🌙 ⭐️';
-            position: absolute;
+        /* Elementos mágicos flutuantes no fundo */
+        .magic-bg {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            opacity: 0.08;
-            font-size: 24px;
-            letter-spacing: 50px;
-            line-height: 120px;
             pointer-events: none;
             z-index: 0;
+            overflow: hidden;
+            opacity: 0.2;
+        }
+
+        .star {
+            position: absolute;
+            color: var(--gold);
+            font-size: 14px;
+            animation: floatStar 6s ease-in-out infinite;
+        }
+
+        @keyframes floatStar {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-10px) scale(1.2); opacity: 0.8; }
         }
 
         header, .container, footer {
@@ -56,11 +66,10 @@
         header {
             text-align: center;
             padding: 50px 20px 30px 20px;
-            background: linear-gradient(to bottom, #120f29, var(--bg-color));
+            background: linear-gradient(to bottom, rgba(18, 15, 41, 0.9), transparent);
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
 
-        /* Estilo da Logo */
         .logo-img {
             width: 110px;
             height: 110px;
@@ -68,7 +77,7 @@
             border: 2px solid var(--gold);
             object-fit: cover;
             margin-bottom: 15px;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
 
         header h1 {
@@ -123,6 +132,7 @@
             border-radius: 12px;
             padding: 30px;
             text-align: center;
+            backdrop-filter: blur(5px);
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
@@ -160,12 +170,13 @@
         }
 
         .app-banner {
-            background: linear-gradient(135deg, #1b163a, var(--card-bg));
+            background: linear-gradient(135deg, rgba(27, 22, 58, 0.9), rgba(22, 19, 45, 0.9));
             border: 1px solid var(--gold);
             border-radius: 16px;
             padding: 40px;
             text-align: center;
             margin-bottom: 60px;
+            backdrop-filter: blur(5px);
         }
 
         .app-banner h2 {
@@ -192,11 +203,19 @@
 </head>
 <body>
 
+    <!-- Fundo com estrelas e luas decorativas -->
+    <div class="magic-bg">
+        <span class="star" style="top: 10%; left: 15%;">✨ 🌙</span>
+        <span class="star" style="top: 25%; left: 85%;">⭐️</span>
+        <span class="star" style="top: 50%; left: 8%;">✨</span>
+        <span class="star" style="top: 70%; left: 90%;">🌙 ✨</span>
+        <span class="star" style="top: 85%; left: 20%;">⭐️</span>
+    </div>
+
     <header>
-        <!-- Aqui está o espaço reservado para a sua logo -->
         <img src="logo_lua.png" alt="Logo Lua d'Biscuit" class="logo-img">
         <h1>Lua d'Biscuit</h1>
-        <p>Oriuração cósmica, autoconhecimento e sabedoria ancestral através do Tarot e da Astrologia.</p>
+        <p>Orientação cósmica, autoconhecimento e sabedoria ancestral através do Tarot e da Astrologia.</p>
     </header>
 
     <div class="container">
@@ -230,4 +249,4 @@
     </footer>
 
 </body>
-</html> 
+</html>
