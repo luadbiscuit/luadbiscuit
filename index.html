@@ -28,12 +28,11 @@
             line-height: 1.6;
             padding-bottom: 50px;
             overflow-x: hidden;
-            /* Fundo com pequenas estrelas e luas em padrão suave */
-            background-image: radial-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 1px);
-            background-size: 40px 40px;
+            background-image: radial-gradient(rgba(212, 175, 55, 0.2) 2px, transparent 2px);
+            background-size: 50px 50px;
         }
 
-        /* Elementos mágicos flutuantes no fundo */
+        /* Fundo mágico atualizado - Mais brilhante */
         .magic-bg {
             position: fixed;
             top: 0;
@@ -43,19 +42,19 @@
             pointer-events: none;
             z-index: 0;
             overflow: hidden;
-            opacity: 0.2;
+            opacity: 0.6; /* Aumentei o brilho aqui para destacar mais */
         }
 
         .star {
             position: absolute;
             color: var(--gold);
-            font-size: 14px;
+            font-size: 20px; /* Estrelas e luas ligeiramente maiores */
             animation: floatStar 6s ease-in-out infinite;
         }
 
         @keyframes floatStar {
-            0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
-            50% { transform: translateY(-10px) scale(1.2); opacity: 0.8; }
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+            50% { transform: translateY(-15px) scale(1.2); opacity: 1; }
         }
 
         header, .container, footer {
@@ -71,13 +70,14 @@
         }
 
         .logo-img {
-            width: 110px;
-            height: 110px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             border: 2px solid var(--gold);
             object-fit: cover;
             margin-bottom: 15px;
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            background-color: var(--bg-color); /* Fundo escuro caso a logo seja transparente */
         }
 
         header h1 {
@@ -203,23 +203,24 @@
 </head>
 <body>
 
-    <!-- Fundo com estrelas e luas decorativas -->
+    <!-- Estrelas e luas decorativas -->
     <div class="magic-bg">
-        <span class="star" style="top: 10%; left: 15%;">✨ 🌙</span>
-        <span class="star" style="top: 25%; left: 85%;">⭐️</span>
-        <span class="star" style="top: 50%; left: 8%;">✨</span>
-        <span class="star" style="top: 70%; left: 90%;">🌙 ✨</span>
-        <span class="star" style="top: 85%; left: 20%;">⭐️</span>
+        <span class="star" style="top: 12%; left: 10%;">✨</span>
+        <span class="star" style="top: 20%; left: 80%;">🌙</span>
+        <span class="star" style="top: 40%; left: 15%;">⭐️</span>
+        <span class="star" style="top: 55%; left: 85%;">✨</span>
+        <span class="star" style="top: 75%; left: 10%;">🌙</span>
+        <span class="star" style="top: 85%; left: 75%;">⭐️</span>
     </div>
 
     <header>
+        <!-- Chamando a imagem que você vai fazer o upload -->
         <img src="logo_lua.png" alt="Logo Lua d'Biscuit" class="logo-img">
         <h1>Lua d'Biscuit</h1>
         <p>Orientação cósmica, autoconhecimento e sabedoria ancestral através do Tarot e da Astrologia.</p>
     </header>
 
     <div class="container">
-        
         <h2 class="section-title">Serviços e Leituras</h2>
         
         <div class="services-grid">
@@ -241,7 +242,6 @@
             <p>Estamos finalizando um aplicativo exclusivo e offline para te acompanhar no dia a dia com tiragens diárias, diário místico e ferramentas astrológicas direto no seu celular.</p>
             <span class="btn" style="background: transparent; border: 1px solid var(--gold); color: var(--gold); cursor: default;">Aguarde o Lançamento</span>
         </div>
-
     </div>
 
     <footer>
