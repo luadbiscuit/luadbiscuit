@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lua d'Biscuit | Tarot & Astrologia</title>
+    <!-- Importando a fonte elegante do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0c0a1d;
+            --card-bg: #16132d;
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-main: #f0f0f5;
+            --text-muted: #b0b0c0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            background: linear-gradient(to bottom, #120f29, var(--bg-color));
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: var(--gold);
+            margin: 10px auto 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .service-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-light);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--gold);
+            color: #000;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--gold-light);
+        }
+
+        .app-banner {
+            background: linear-gradient(135deg, #1b163a, var(--card-bg));
+            border: 1px solid var(--gold);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .app-banner h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .app-banner p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Lua d'Biscuit</h1>
+        <p>Oriuração cósmica, autoconhecimento e sabedoria ancestral através do Tarot e da Astrologia.</p>
+    </header>
+
+    <div class="container">
+        
+        <h2 class="section-title">Serviços e Leituras</h2>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Leitura de Tarot</h3>
+                <p>Orientação profunda para momentos de decisão, clareza nos caminhos do amor, carreira e energias do momento.</p>
+                <a href="https://wa.me/55SEUNUMEROAQUI?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20leituras%20de%20Tarot." class="btn" target="_blank">Agendar Leitura</a>
+            </div>
+
+            <div class="service-card">
+                <h3>Mapa Astral</h3>
+                <p>Descubra os segredos impressos no céu no momento exato do seu nascimento e compreenda sua essência e potencialidades.</p>
+                <a href="https://wa.me/55SEUNUMEROAQUI?text=Olá!%20Gostaria%20de%20encomendar%20meu%20Mapa%20Astral." class="btn" target="_blank">Pedir Mapa</a>
+            </div>
+        </div>
+
+        <div class="app-banner">
+            <h2>Aplicativo Lua d'Biscuit (Em Breve)</h2>
+            <p>Estamos finalizando um aplicativo exclusivo e offline para te acompanhar no dia a dia com tiragens diárias, diário místico e ferramentas astrológicas direto no seu celular.</p>
+            <span class="btn" style="background: transparent; border: 1px solid var(--gold); color: var(--gold); cursor: default;">Aguarde o Lançamento</span>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Lua d'Biscuit. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
