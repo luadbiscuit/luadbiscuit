@@ -7,8 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0c0a1d;
-            --card-bg: rgba(22, 19, 45, 0.85);
+            /* Fundo azul escuro puxado das bordas da sua arte */
+            --bg-color: #0e1022; 
+            --card-bg: rgba(30, 30, 50, 0.5);
             --gold: #d4af37;
             --gold-light: #f3e5ab;
             --text-main: #f0f0f5;
@@ -27,72 +28,29 @@
             color: var(--text-main);
             line-height: 1.6;
             padding-bottom: 50px;
-            overflow-x: hidden;
-            background-image: radial-gradient(rgba(212, 175, 55, 0.2) 2px, transparent 2px);
-            background-size: 50px 50px;
         }
 
-        /* Fundo mágico atualizado - Mais brilhante */
-        .magic-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-            opacity: 0.6; /* Aumentei o brilho aqui para destacar mais */
-        }
-
-        .star {
-            position: absolute;
-            color: var(--gold);
-            font-size: 20px; /* Estrelas e luas ligeiramente maiores */
-            animation: floatStar 6s ease-in-out infinite;
-        }
-
-        @keyframes floatStar {
-            0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
-            50% { transform: translateY(-15px) scale(1.2); opacity: 1; }
-        }
-
-        header, .container, footer {
-            position: relative;
-            z-index: 1;
-        }
-
-        header {
+        /* O novo topo que exibe a sua arte em destaque */
+        .hero-header {
             text-align: center;
-            padding: 50px 20px 30px 20px;
-            background: linear-gradient(to bottom, rgba(18, 15, 41, 0.9), transparent);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            background-color: var(--bg-color);
+            padding-bottom: 30px;
         }
 
-        .logo-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 2px solid var(--gold);
-            object-fit: cover;
-            margin-bottom: 15px;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-            background-color: var(--bg-color); /* Fundo escuro caso a logo seja transparente */
-        }
-
-        header h1 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            font-size: 2.4rem;
-            margin-bottom: 8px;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            max-width: 600px;
+        .hero-image {
+            width: 100%;
+            max-width: 1200px; /* Limita o tamanho em telas muito gigantes */
+            height: auto;
+            display: block;
             margin: 0 auto;
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
         }
 
         .container {
@@ -128,11 +86,10 @@
 
         .service-card {
             background-color: var(--card-bg);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             border-radius: 12px;
             padding: 30px;
             text-align: center;
-            backdrop-filter: blur(5px);
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
@@ -170,13 +127,12 @@
         }
 
         .app-banner {
-            background: linear-gradient(135deg, rgba(27, 22, 58, 0.9), rgba(22, 19, 45, 0.9));
+            background: linear-gradient(135deg, rgba(27, 22, 58, 0.6), rgba(22, 19, 45, 0.8));
             border: 1px solid var(--gold);
             border-radius: 16px;
             padding: 40px;
             text-align: center;
             margin-bottom: 60px;
-            backdrop-filter: blur(5px);
         }
 
         .app-banner h2 {
@@ -203,21 +159,10 @@
 </head>
 <body>
 
-    <!-- Estrelas e luas decorativas -->
-    <div class="magic-bg">
-        <span class="star" style="top: 12%; left: 10%;">✨</span>
-        <span class="star" style="top: 20%; left: 80%;">🌙</span>
-        <span class="star" style="top: 40%; left: 15%;">⭐️</span>
-        <span class="star" style="top: 55%; left: 85%;">✨</span>
-        <span class="star" style="top: 75%; left: 10%;">🌙</span>
-        <span class="star" style="top: 85%; left: 75%;">⭐️</span>
-    </div>
-
-    <header>
-        <!-- Chamando a imagem que você vai fazer o upload -->
-        <img src="logo_lua.png" alt="Logo Lua d'Biscuit" class="logo-img">
-        <h1>Lua d'Biscuit</h1>
-        <p>Orientação cósmica, autoconhecimento e sabedoria ancestral através do Tarot e da Astrologia.</p>
+    <!-- Novo Topo com a sua Arte -->
+    <header class="hero-header">
+        <img src="capa_lua.png" alt="Lua d'Biscuit - Astrologia e Tarot" class="hero-image">
+        <p class="hero-subtitle">Orientação cósmica, autoconhecimento e sabedoria ancestral através do Tarot e da Astrologia.</p>
     </header>
 
     <div class="container">
