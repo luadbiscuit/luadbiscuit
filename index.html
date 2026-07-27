@@ -28,26 +28,60 @@
             color: var(--text-main);
             line-height: 1.6;
             padding-bottom: 50px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Efeito de Estrelas e Luas Mágicas no Fundo */
+        body::before {
+            content: '✨ 🌙 ⭐️ ✨ 🌙 ⭐️ ✨ 🌙 ⭐️';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+            font-size: 24px;
+            letter-spacing: 50px;
+            line-height: 120px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        header, .container, footer {
+            position: relative;
+            z-index: 1;
         }
 
         header {
             text-align: center;
-            padding: 60px 20px 40px 20px;
+            padding: 50px 20px 30px 20px;
             background: linear-gradient(to bottom, #120f29, var(--bg-color));
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Estilo da Logo */
+        .logo-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
 
         header h1 {
             font-family: 'Cinzel', serif;
             color: var(--gold);
-            font-size: 2.8rem;
-            margin-bottom: 10px;
+            font-size: 2.4rem;
+            margin-bottom: 8px;
             letter-spacing: 2px;
         }
 
         header p {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -62,18 +96,18 @@
             font-family: 'Cinzel', serif;
             color: var(--gold);
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
+            font-size: 1.8rem;
+            margin-bottom: 35px;
             position: relative;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 50px;
             height: 2px;
             background-color: var(--gold);
-            margin: 10px auto 0 auto;
+            margin: 8px auto 0 auto;
         }
 
         .services-grid {
@@ -100,7 +134,7 @@
         .service-card h3 {
             font-family: 'Cinzel', serif;
             color: var(--gold-light);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 15px;
         }
 
@@ -137,7 +171,7 @@
         .app-banner h2 {
             font-family: 'Cinzel', serif;
             color: var(--gold);
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             margin-bottom: 15px;
         }
 
@@ -159,6 +193,8 @@
 <body>
 
     <header>
+        <!-- Aqui está o espaço reservado para a sua logo -->
+        <img src="logo_lua.png" alt="Logo Lua d'Biscuit" class="logo-img">
         <h1>Lua d'Biscuit</h1>
         <p>Oriuração cósmica, autoconhecimento e sabedoria ancestral através do Tarot e da Astrologia.</p>
     </header>
