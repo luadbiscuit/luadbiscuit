@@ -10,7 +10,7 @@
             --gold: #d4af37;
             --gold-light: #f3e5ab;
             --text-main: #f0f0f5;
-            --text-muted: #dcdce6; /* Clareei um pouco para dar mais leitura */
+            --text-muted: #dcdce6;
         }
 
         * {
@@ -19,22 +19,20 @@
             padding: 0;
         }
 
-        /* AQUI ESTÁ A MÁGICA: A imagem é o corpo inteiro do site */
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-image: url('capa_lua.png'); /* ALTERE AQUI SE O NOME DA SUA IMAGEM FOR DIFERENTE */
-            background-size: cover; /* Faz a imagem cobrir a tela toda */
-            background-position: center center; /* Mantém a lua bem no meio da tela */
-            background-attachment: fixed; /* A imagem fica parada enquanto os textos rolam por cima */
+            background-image: url('capa_lua.png'); 
+            background-size: cover; 
+            background-position: center center; 
+            background-attachment: fixed; 
             background-color: #0c0a1d; 
             color: var(--text-main);
             line-height: 1.6;
             padding-bottom: 50px;
         }
 
-        /* Espaço em branco gigante para não esconder a sua arte logo de cara */
         .espaco-arte {
-            height: 55vh; /* Ocupa mais da metade da tela só mostrando o seu desenho */
+            height: 55vh; 
             width: 100%;
         }
 
@@ -46,24 +44,6 @@
             z-index: 2;
         }
 
-        .section-title {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 35px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.8); /* Sombrinha para o texto não sumir no fundo */
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 2px;
-            background-color: var(--gold);
-            margin: 8px auto 0 auto;
-        }
-
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -71,7 +51,6 @@
             margin-bottom: 60px;
         }
 
-        /* Caixinhas com efeito de "Vidro Escuro" para destacar os textos em cima da imagem */
         .service-card {
             background-color: rgba(12, 10, 29, 0.85);
             border: 1px solid rgba(212, 175, 55, 0.3);
@@ -151,12 +130,9 @@
 </head>
 <body>
 
-    <!-- Esse é o espaço vazio para a cliente admirar a sua arte quando o site abrir -->
     <div class="espaco-arte"></div>
 
     <div class="container">
-        
-        <h2 class="section-title">Serviços e Leituras</h2>
         
         <div class="services-grid">
             <div class="service-card">
